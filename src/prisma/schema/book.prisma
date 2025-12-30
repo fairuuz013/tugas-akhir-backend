@@ -1,0 +1,14 @@
+model Book {
+  id            Int    @id @default(autoincrement())
+  title         String
+  author        String
+  stock         Int
+  cover         String?
+  publishedYear Int?   // ⬅️ baru
+
+  borrowItems BorrowItem[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+}
